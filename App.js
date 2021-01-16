@@ -64,6 +64,11 @@ const App= () => {
                 Read the docs to discover what to do next:
               </Text>
             </View>
+            <View>
+              <Text style={styles.sectionDescription2} >
+                React Native Lover of Bangladesh
+              </Text>
+            </View>
             <LearnMoreLinks />
           </View>
         </ScrollView>
@@ -93,6 +98,13 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark,
+  },
+  sectionDescription2:
+  {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',

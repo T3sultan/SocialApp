@@ -1,12 +1,57 @@
 import React from 'react';
-import {View, Text,Button,Image, StyleSheet} from 'react-native';
+import {View, Text,Button,Image,TouchableOpacity, StyleSheet} from 'react-native';
 
 import Onboarding from 'react-native-onboarding-swiper';
+
+const Dots=({selected})=>{
+  let backgroundColor;
+  backgroundColor= selected ? 'rgba(0,0,0,0.8)' : 'rgba(0,0,0,0.3)';
+  return(
+    <View
+      style={{
+        width:5,
+        height:5,
+        backgroundColor,
+        marginHorizontal:3
+      }}
+    />
+  )
+
+};
+
+const Skip =({...props})=>(
+  <Button
+    title="Skip"
+    color="black"
+    
+  />
+
+);
+const Next =({...props})=>(
+  <Button
+    
+    title="Next"
+    color="black"
+    {...props}
+  />
+
+);
+const Done =({...props})=>(
+  <TouchableOpacity
+   style={{marginHorizontal:8}}
+   {...props}
+   ><Text style={{fontSize:16}}>Done</Text></TouchableOpacity>
+
+);
 
 const OnboardingScreen = ({navigation}) =>{
     return (
         <Onboarding
-         onSkip={()=>navigation.navigate('Login')}
+         SkipButtonComponent ={Skip}
+         NextButtonComponent = {Next}
+         DoneButtonComponent  = {Done}
+         DotComponent ={Dots}
+         onSkip={()=>navigation.replace('Login')}
          onDone={()=>navigation.navigate('Login')}
         pages={[
           {
